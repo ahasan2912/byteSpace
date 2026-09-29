@@ -1,127 +1,179 @@
-import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
-import hero1 from "../assets/hero-1.png";
 
-/**
- * Design stage = 1174 x 832 px (Figma frame). Every element is absolutely
- * positioned with the exact x/y/size from the design, and the whole stage is
- * scaled down on smaller screens so proportions never break.
- *
- * Put each asset in /public/hero/ (export individually from Figma, transparent PNG/WebP):
- *  person.png, spring-green.png, spring-white-sm.png, cylinder.png,
- *  cone.png, torus.png, spring-white-lg.png, avatar-1..6.png
- */
-const W = 1174, H = 832;
+// Assets imported from src/assets
+import heroGreenSpring from "../assets/hero-1.png";
+import springWhiteSm from "../assets/Frame (2).png";
+import cylinderGreen from "../assets/Cone.png";
+import coneWhite from "../assets/Cone (1).png";
+import torusWhite from "../assets/Cone (2).png";
+import ellipseArc from "../assets/Ellipse 7.png";
+import springWhiteLg from "../assets/spring-white-lg.png";
+import avatarsRow from "../assets/avatars/avatars_row.png";
+import happyMoment from "../assets/happy.png";
 
-const shapes = [
-  // [src, left, top, width, height]
-  [hero1,    -4,  228, 165, 225],
-  ["/hero/spring-white-sm.png", 173, 408,  98, 104],
-  ["/hero/cylinder.png",       1038, 205, 140, 250],
-  ["/hero/cone.png",            920, 393, 106, 116],
-  ["/hero/torus.png",            50, 600, 202, 212],
-  ["/hero/spring-white-lg.png", 972, 576, 162, 208],
+// Inner shapes inside the 1174px container
+const innerShapes = [
+  // Small white spring on mid-left
+  { src: springWhiteSm, left: 170, top: 408, width: 104, height: 110 },
+  // White torus on bottom-left
+  { src: torusWhite, left: 0, top: 600, width: 302, height: 312 },
+  // White pyramid/cone on mid-right
+  { src: coneWhite, left: 915, top: 390, width: 210, height: 120 },
+  // Large white spring on bottom-right
+  { src: springWhiteLg, left: 1068, top: 672, width: 165, height: 212 },
 ];
 
 export default function Hero() {
-  const [scale, setScale] = useState(1);
-  useEffect(() => {
-    const fit = () => setScale(Math.min(1, window.innerWidth / W));
-    fit();
-    window.addEventListener("resize", fit);
-    return () => window.removeEventListener("resize", fit);
-  }, []);
-
   return (
-    <section
-      className="relative w-full overflow-hidden bg-[#0338E3] poppins-font"
-      style={{ height: H * scale }}
-    >
-      {/* grid background — spans full width */}
+    <section className="relative w-full h-screen overflow-hidden bg-[#0338E3] poppins-font flex justify-center select-text">
+      {/* Background blueprint grid — Spans FULL SCREEN */}
       <div
-        className="pointer-events-none absolute inset-0"
+        className="absolute inset-0 w-full h-full"
         style={{
           backgroundImage:
-            "linear-gradient(to right, rgba(255,255,255,.10) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.10) 1px, transparent 1px)",
+            "linear-gradient(to right, rgba(255,255,255,0.09) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.09) 1px, transparent 1px)",
           backgroundSize: "97.6px 97.6px",
-          backgroundPosition: `calc(50% - ${W / 2 - 97}px) 95px`,
+          backgroundPosition: "center top",
         }}
       />
 
-      <div
-        className="absolute left-1/2 top-0 origin-top"
-        style={{ width: W, height: H, transform: `translateX(-50%) scale(${scale})` }}
-      >
+      {/* 1. Left-0 Side Image (Green Spring) */}
+      <img
+        src={heroGreenSpring}
+        alt=""
+        draggable={false}
+        className="absolute left-0 top-57 z-20 object-fill hidden xl:block xl:w-45"
+      />
+
+      {/* 2. Right-0 Side Image (Green Cylinder) */}
+      <img
+        src={cylinderGreen}
+        alt=""
+        draggable={false}
+        className="hidden xl:block xl:w-45 absolute right-0 top-55.25 z-20 object-fill"
+      />
+
+      {/* 3. Half Circle Arc — Placed BELOW Search Bar & Touch Bottom-0 */}
+      <img
+        src={ellipseArc}
+        alt=""
+        draggable={false}
+        className="absolute left-1/2 bottom-0 z-10 w-250 -translate-x-1/2 object-fill"
+      />
+
+      {/* Main Container — Fixed 1174px size, centered always */}
+      <div className="relative w-293.5 h-208 shrink-0 z-20">
+        {/* Navigation Bar */}
         <Navbar />
 
-        {/* Heading — 60/69, centered at x:586 */}
-        <h1 className="absolute left-1/2 top-[137px] w-[760px] -translate-x-1/2 text-center text-[60px] font-semibold leading-[69px] tracking-[-0.6px] text-white">
-          Get Access to Hundreds<br />Courses Available
+        {/* Main Heading */}
+        <h1 className="absolute left-1/2 top-[120px] z-30 w-[820px] -translate-x-1/2 text-center text-[60px] font-bold leading-[68px] tracking-tight text-white">
+          Get Access to Hundreds
+          <br />
+          Courses Available
         </h1>
 
-        <p className="absolute left-1/2 top-[304px] -translate-x-1/2 whitespace-nowrap text-[15px] leading-[22px] text-white">
+        {/* Subtitle */}
+        <p className="absolute left-1/2 top-[268px] z-30 -translate-x-1/2 whitespace-nowrap text-center text-[15px] font-normal leading-[22px] text-white/90">
           Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.
         </p>
 
-        {/* Search input x:349 y:375 376x42 */}
-        <div className="absolute left-[349px] top-[375px] flex h-[42px] w-[376px] items-center gap-2 rounded-full bg-white px-[22px]">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#6B6B6B" strokeWidth="1.5" strokeLinecap="round">
-            <circle cx="7" cy="7" r="5" /><path d="m11 11 3.500 3.500" />
-          </svg>
-          <input
-            placeholder="Course, topic, creator"
-            className="w-full bg-transparent text-[14px] text-[#222] outline-none placeholder:text-[#8A8A8A]"
-          />
+        {/* Search Bar & Button */}
+        <div className="absolute left-1/2 top-80 z-30 flex -translate-x-1/2 items-center gap-3">
+          <div className="flex h-13 w-120 items-center gap-3 rounded-full bg-white px-5.5 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#7E7E7E"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+            <input
+              type="text"
+              placeholder="Course, topic, creator"
+              className="w-full bg-transparent text-[14px] font-normal text-[#222] outline-none placeholder:text-[#8E8E8E]"
+            />
+          </div>
+          <button className="flex py-3.5 px-8 items-center justify-center rounded-full bg-[#CCFF00] text-[14px] font-medium text-[#111] transition-transform hover:scale-105 active:scale-95 shadow-[0_4px_14px_rgba(204,255,0,0.25)] cursor-pointer">
+            Search
+          </button>
         </div>
-        <button className="absolute left-[739px] top-[375px] h-[38px] w-[84px] rounded-full bg-[#CCFF00] text-[14px] font-medium text-[#111]">
-          Search
-        </button>
 
-        {/* Lime circle — r≈469, top at y:477 */}
-        <div className="absolute left-[116px] top-[477px] h-[938px] w-[938px] rounded-full bg-[#CCFF00]" />
-
-        {/* 3D shapes */}
-        {shapes.map(([src, l, t, w, h]) => (
-          <img key={src} src={src} alt="" draggable={false}
-            className="absolute z-10 select-none object-contain"
-            style={{ left: l, top: t, width: w, height: h }} />
+        {/* Inner 3D Shapes */}
+        {innerShapes.map(({ src, left, top, width, height }, idx) => (
+          <img
+            key={idx}
+            src={src}
+            alt=""
+            draggable={false}
+            className="hidden lg:block absolute z-20 object-contain transition-transform hover:scale-105 duration-300"
+            style={{ left, top, width, height }}
+          />
         ))}
 
-        {/* Person */}
-        <img src="/hero/person.png" alt="Smiling student with headset and laptop"
-          className="absolute left-[408px] top-[446px] z-20 h-[386px] w-[420px] select-none object-contain object-bottom" />
+        {/* Student Image */}
+        <div className="">
+          <img
+            src={happyMoment}
+            alt="Smiling student with headset and laptop"
+            draggable={false}
+            className="absolute -bottom-20 left-70"
+          />
+        </div>
 
-        {/* Card: UI/UX Design — x:328 y:520 170x57 */}
-        <div className="absolute left-[328px] top-[520px] z-30 h-[57px] w-[170px] rounded-[12px] bg-white px-[13px] pt-[13px]">
-          <p className="text-[14px] font-medium leading-[18px] text-[#111]">UI/UX Design</p>
-          <p className="mt-[3px] text-[10px] leading-[14px] text-[#8A8A8A]">
+        {/* Badge 1: UI/UX Design */}
+        <div className="absolute left-82 top-130 z-30 h-14.5 w-43 rounded-[13px] bg-white px-3.5 pt-2.75 shadow-[0_10px_25px_rgba(0,0,0,0.10)] transition-transform hover:-translate-y-0.5">
+          <p className="text-[13px] font-semibold leading-4.5 text-[#111]">
+            UI/UX Design
+          </p>
+          <p className="mt-[2px] text-[10px] font-medium leading-[14px] text-[#8A8A8A]">
             200 Courses <span className="mx-1">•</span> 1000+ Students
           </p>
         </div>
 
-        {/* Card: Learning Progress — x:686 y:530 189x106 */}
-        <div className="absolute left-[686px] top-[530px] z-30 h-[106px] w-[189px] rounded-[12px] bg-white px-[13px] pt-[13px]">
-          <p className="text-[11px] leading-[14px] text-[#222]">Learning Progress</p>
-          <p className="mt-[4px] text-[40px] font-semibold leading-[48px] text-[#222]">55%</p>
-          <div className="mt-[6px] h-[5px] w-[163px] rounded-full bg-[#EBEBEB]">
+        {/* Badge 2: Learning Progress */}
+        <div className="absolute left-[686px] top-[530px] z-30 h-[106px] w-[189px] rounded-[15px] bg-white px-[16px] pt-[14px] shadow-[0_10px_25px_rgba(0,0,0,0.10)] transition-transform hover:-translate-y-0.5">
+          <p className="text-[11px] font-medium leading-[14px] text-[#333]">
+            Learning Progress
+          </p>
+          <p className="mt-[4px] text-[38px] font-bold leading-[44px] tracking-tight text-[#111]">
+            55%
+          </p>
+          <div className="mt-[8px] h-[5px] w-full rounded-full bg-[#EBEBEB]">
             <div className="h-full w-[55%] rounded-full bg-[#CCFF00]" />
           </div>
         </div>
 
-        {/* Card: Happy Students — x:266 y:682 210x98 */}
-        <div className="absolute left-[266px] top-[682px] z-30 h-[98px] w-[210px] rounded-[12px] bg-white px-[13px] pt-[12px]">
-          <p className="text-[14px] font-medium leading-[18px] text-[#111]">Happy Students</p>
-          <p className="text-[11px] leading-[14px] text-[#555]">
-            4.5 <span className="text-[#8A8A8A]">(240)</span> <span className="text-[#CCFF00]">★</span>
+        {/* Badge 3: Happy Students */}
+        <div className="absolute left-[266px] top-[682px] z-30 h-[96px] w-[210px] rounded-[15px] bg-white px-[14px] pt-[12px] shadow-[0_10px_25px_rgba(0,0,0,0.10)] transition-transform hover:-translate-y-0.5">
+          <p className="text-[13px] font-semibold leading-[16px] text-[#111]">
+            Happy Students
           </p>
-          <div className="mt-[7px] flex items-center">
-            {[1, 2, 3, 4, 5, 6].map((n) => (
-              <img key={n} src={`/hero/avatar-${n}.png`} alt=""
-                className="-mr-[6px] h-[36px] w-[36px] rounded-full border-2 border-white bg-[#ddd] object-cover" />
-            ))}
-            <span className="z-10 -ml-[0px] flex h-[36px] w-[36px] items-center justify-center rounded-full border-2 border-white bg-[#CCFF00] text-[11px] font-semibold text-[#111]">
-              2K+
-            </span>
+          <div className="mt-[2px] flex items-center gap-1">
+            <span className="text-[11px] font-semibold text-[#444]">4.5</span>
+            <span className="text-[10px] font-normal text-[#8A8A8A]">(240)</span>
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="#D4FB20"
+              className="ml-0.5 inline-block"
+            >
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+          </div>
+          <div className="mt-[8px]">
+            <img
+              src={avatarsRow}
+              alt="Student Avatars"
+              className="h-[28px] w-auto object-contain"
+            />
           </div>
         </div>
       </div>

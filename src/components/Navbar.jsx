@@ -1,36 +1,93 @@
+import { useState } from "react";
 import { Link } from "react-router";
 import navbarLogo from "../assets/svg/Header_Logo.svg";
+import headerBag from "../assets/svg/header_bag.svg";
 
 const links = ["Home", "Courses", "Creators"];
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="absolute left-0 top-0 z-30 h-23.5 w-full text-white">
-      {/* Logo — x:97 y:26 */}
-      <Link to="/" className="absolute top-6.5 flex items-center gap-1.75">
-        <img src={navbarLogo} alt="ByteSpace Logo" className="h-7 w-auto" />
+    <nav className="relative top-0 left-0 z-50 flex w-full items-center justify-between px-4 py-5 md:px-8 lg:px-12 text-white">
+      {/* Left: Logo */}
+      <Link to="/" className="flex items-center transition-opacity hover:opacity-90">
+        <img src={navbarLogo} alt="ByteSpace Logo" className="h-7 md:h-8.5 w-auto" />
       </Link>
 
-      {/* Center links — centered at x:586 */}
-      <ul className="absolute left-1/2 top-9.25 flex -translate-x-1/2 items-center gap-5 text-[14px] leading-5">
+      {/* Center: Desktop Navigation Links */}
+      <ul className="hidden md:flex items-center gap-6 lg:gap-8 text-[15px] font-normal tracking-wide">
         {links.map((l, i) => (
           <li key={l}>
-            <a href="#" className={i === 0 ? "font-medium" : "opacity-90 hover:opacity-100"}>{l}</a>
+            <a
+              href="#"
+              className={`transition-colors ${
+                i === 0
+                  ? "font-medium text-white"
+                  : "text-white/80 hover:text-white"
+              }`}
+            >
+              {l}
+            </a>
           </li>
         ))}
       </ul>
 
-      {/* Right — Sign In x:934 */}
-      <div className="absolute right-0 top-9.25 flex items-center gap-5 text-[14px] leading-5">
-        <a href="#" className="opacity-90 hover:opacity-100">Sign In</a>
-        <a href="#" className="opacity-90 hover:opacity-100">Join Us</a>
-        <button aria-label="Cart" className="ml-0.75">
-          <svg width="15" height="18" viewBox="0 0 15 18" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinejoin="round">
-            <path d="M1 5h13v11.200a.8.8 0 0 1-.8.8H1.800a.8.8 0 0 1-.8-.8V5Z" />
-            <path d="M4.500 7.500V4a3 3 0 0 1 6 0v3.500" strokeLinecap="round" />
+      {/* Right: Actions */}
+      <div className="flex items-center gap-4 md:gap-6 text-[14px] md:text-[15px] font-normal">
+        <a href="#" className="hidden sm:inline-block text-white/85 transition-colors hover:text-white">
+          Sign In
+        </a>
+        <a
+          href="#"
+          className="rounded-full bg-white/10 px-4 py-2 sm:bg-transparent sm:p-0 text-white transition-colors hover:bg-white/20 sm:hover:bg-transparent hover:text-white"
+        >
+          Join Us
+        </a>
+        <button
+          aria-label="Cart"
+          className="flex items-center justify-center p-1 transition-transform hover:scale-105"
+        >
+          <img src={headerBag} alt="Shopping Cart" className="h-4.5 w-auto" />
+        </button>
+
+        {/* Mobile Hamburger Toggle Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden p-1 focus:outline-none text-white"
+          aria-label="Toggle menu"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {isOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            )}
           </svg>
         </button>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isOpen && (
+        <div className="absolute top-full left-0 w-full bg-[#0338E3]/95 backdrop-blur-md p-6 flex flex-col gap-4 shadow-xl md:hidden border-t border-white/10">
+          {links.map((l, i) => (
+            <a
+              key={l}
+              href="#"
+              className={`text-lg transition-colors ${
+                i === 0 ? "font-semibold text-white" : "text-white/80 hover:text-white"
+              }`}
+            >
+              {l}
+            </a>
+          ))}
+          <div className="pt-2 border-t border-white/10 flex flex-col gap-3">
+            <a href="#" className="text-white/80 hover:text-white">
+              Sign In
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
