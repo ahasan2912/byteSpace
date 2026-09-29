@@ -21,11 +21,10 @@ export default function Navbar() {
           <li key={l}>
             <a
               href="#"
-              className={`transition-colors ${
-                i === 0
+              className={`transition-colors ${i === 0
                   ? "font-medium text-white"
                   : "text-white/80 hover:text-white"
-              }`}
+                }`}
             >
               {l}
             </a>
@@ -40,7 +39,7 @@ export default function Navbar() {
         </a>
         <a
           href="#"
-          className="rounded-full bg-white/10 px-4 py-2 sm:bg-transparent sm:p-0 text-white transition-colors hover:bg-white/20 sm:hover:bg-transparent hover:text-white"
+          className="hidden sm:inline-block rounded-full bg-white/10 px-4 py-2 sm:bg-transparent sm:p-0 text-white transition-colors hover:bg-white/20 sm:hover:bg-transparent hover:text-white"
         >
           Join Us
         </a>
@@ -74,15 +73,20 @@ export default function Navbar() {
             <a
               key={l}
               href="#"
-              className={`text-lg transition-colors ${
-                i === 0 ? "font-semibold text-white" : "text-white/80 hover:text-white"
-              }`}
+              className={`text-base transition-colors ${i === 0 ? "font-semibold text-white" : "text-white/80 hover:text-white"
+                }`}
             >
               {l}
             </a>
           ))}
           <div className="pt-2 border-t border-white/10 flex flex-col gap-3">
-            <a href="#" className="text-white/80 hover:text-white">
+            <a
+              href="#"
+              className="text-white/80 hover:text-whit font-semibolde"
+            >
+              Join Us
+            </a>
+            <a href="#" className="text-white/80 hover:text-white font-semibold">
               Sign In
             </a>
           </div>
