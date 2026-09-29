@@ -9,7 +9,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="relative top-0 left-0 z-50 flex w-full items-center justify-between px-4 py-5 md:px-8 lg:px-12 text-white">
+    <nav className="relative top-0 left-0 z-50 flex w-full items-center justify-between px-4 pb-2 sm:pb-0 sm:py-5 text-white">
       {/* Left: Logo */}
       <Link to="/" className="flex items-center transition-opacity hover:opacity-90">
         <img src={navbarLogo} alt="ByteSpace Logo" className="h-7 md:h-8.5 w-auto" />

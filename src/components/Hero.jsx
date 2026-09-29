@@ -100,7 +100,7 @@ export default function Hero() {
               className="w-full bg-transparent text-sm font-normal text-[#222] outline-none placeholder:text-[#8E8E8E]"
             />
           </div>
-          <button className="w-full sm:w-auto h-12 sm:h-auto py-3.5 px-8 items-center justify-center rounded-full bg-[#CCFF00] text-sm font-semibold text-[#111] transition-transform hover:scale-105 active:scale-95 shadow-[0_4px_14px_rgba(204,255,0,0.25)] cursor-pointer shrink-0">
+          <button className="w-full sm:w-auto sm:h-auto py-4 px-8 items-center justify-center rounded-full bg-[#CCFF00] text-sm font-semibold text-[#111] transition-transform hover:scale-105 active:scale-95 shadow-[0_4px_14px_rgba(204,255,0,0.25)] cursor-pointer shrink-0">
             Search
           </button>
         </div>
