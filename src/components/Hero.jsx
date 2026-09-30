@@ -10,9 +10,9 @@ import avatarsRow from "../assets/avatars/avatars_row.png";
 import happyMoment from "../assets/happy.png";
 
 const innerShapes = [
-  { src: springWhiteSm, left: "10%", top: "45%", width: "90px", height: "95px" },
+  { src: springWhiteSm, left: "5%", top: "36%", width: "170px", height: "170px" },
   { src: torusWhite, left: "1%", top: "68%", width: "220px", height: "230px" },
-  { src: coneWhite, right: "10%", top: "42%", width: "180px", height: "100px" },
+  { src: coneWhite, right: "5%", top: "33%", width: "280px", height: "180px" },
   { src: springWhiteLg, right: "2%", top: "70%", width: "140px", height: "180px" },
 ];
 

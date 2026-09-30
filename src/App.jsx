@@ -6,6 +6,7 @@ import LearningPathSection from "./components/LearningPathSection";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 import PotentialCreators from "./components/PotentialCreators";
+import ProfessionalGrowth from "./components/ProfessionalGrowth";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -32,9 +33,10 @@ const App = () => {
       <LogoSlider />
       <BuildSkills />
       <LearningPathSection />
-      <PotentialCreators/>
+      <ProfessionalGrowth />
+      <PotentialCreators />
       <Testimonials />
-      <Footer/>
+      <Footer />
     </div>
   );
 };
