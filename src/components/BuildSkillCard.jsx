@@ -12,7 +12,7 @@ const BuildSkillCard = ({ course }) => {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                     />
-                    <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between gap-1 text-[11px] font-medium text-slate-800">
+                    <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between gap-1 text-[11px] font-medium text-slate-800 select-text">
                         <div className="bg-white/70 backdrop-blur-md px-2.5 py-1.5 rounded-full flex items-center space-x-1 shadow-sm border border-white/40">
                             <span>{course.lessons}</span>
                         </div>
@@ -26,17 +26,17 @@ const BuildSkillCard = ({ course }) => {
                 </div>
                 <div className="px-1 pt-4 pb-2 space-y-1.5">
                     <div className="flex items-start justify-between">
-                        <h3 className="text-base font-bold text-slate-900 tracking-tight leading-snug group-hover:text-blue-600 transition-colors">
+                        <h3 className="text-base sm:text-lg font-semibold text-[#000000] tracking-tight leading-snug group-hover:text-blue-600 transition-colors">
                             {course.title}
                         </h3>
-                        <div className="flex items-center space-x-1 text-slate-500 font-semibold text-xs shrink-0 pt-0.5 ml-2">
-                            <span className="text-slate-800">{course.rating}</span>
+                        <div className="flex items-center space-x-1 text-slate-500 text-sm sm:text-base shrink-0 pt-0.5 ml-2">
+                            <span className="text-[#4F4F4F]">{course.rating}</span>
                             <Star className="w-3.5 h-3.5 fill-slate-300 text-slate-300" />
                         </div>
                     </div>
 
-                    <p className="text-xs text-blue-500/80 font-medium">
-                        by {course.author}
+                    <p className="text-sm text-[#4F4F4F]">
+                        by <span className="text-[#003BE2]">{course.author}</span>
                     </p>
                 </div>
             </div>
@@ -44,7 +44,7 @@ const BuildSkillCard = ({ course }) => {
             <div className="px-1 pt-2 pb-1 space-y-3">
                 <div className="flex items-center gap-3">
                     <div className="bg-[#F4F5F7] text-slate-700 px-3 py-1 rounded-full text-xs font-medium flex items-center space-x-1.5">
-                        <Signal className="w-3 h-3 text-slate-600" />
+                        <Signal className="w-4 h-4 text-[#4B4C53]" />
                         <span>{course.level}</span>
                     </div>
 
@@ -66,10 +66,10 @@ const BuildSkillCard = ({ course }) => {
                 </div>
 
                 <div className="pt-1 flex items-baseline">
-                    <span className="text-lg font-extrabold text-blue-600 tracking-tight">
+                    <span className="text-lg font-bold text-[#003BE2] tracking-tight">
                         ${course.price}
                     </span>
-                    <span className="text-xs text-slate-400 font-normal">
+                    <span className="text-xs text-[#4F4F4F] font-normal">
                         /lifetime
                     </span>
                 </div>

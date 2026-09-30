@@ -10,7 +10,6 @@ export default function Navbar() {
 
   return (
     <nav className="relative top-0 left-0 z-50 flex w-full items-center justify-between px-4 pb-2 sm:pb-0 sm:py-5 text-white">
-      {/* Left: Logo */}
       <Link to="/" className="flex items-center transition-opacity hover:opacity-90">
         <img src={navbarLogo} alt="ByteSpace Logo" className="h-7 md:h-8.5 w-auto" />
       </Link>
@@ -19,30 +18,30 @@ export default function Navbar() {
       <ul className="hidden md:flex items-center gap-6 lg:gap-8 text-[15px] font-normal tracking-wide">
         {links.map((l, i) => (
           <li key={l}>
-            <a
-              href="#"
+            <Link
+              to="#"
               className={`transition-colors ${i === 0
                   ? "font-medium text-white"
                   : "text-white/80 hover:text-white"
                 }`}
             >
               {l}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
 
       {/* Right: Actions */}
       <div className="flex items-center gap-4 md:gap-6 text-[14px] md:text-[15px] font-normal">
-        <a href="#" className="hidden sm:inline-block text-white/85 transition-colors hover:text-white">
+        <Link to="#" className="hidden sm:inline-block text-white/85 transition-colors hover:text-white">
           Sign In
-        </a>
-        <a
-          href="#"
+        </Link>
+        <Link
+          to="#"
           className="hidden sm:inline-block rounded-full bg-white/10 px-4 py-2 sm:bg-transparent sm:p-0 text-white transition-colors hover:bg-white/20 sm:hover:bg-transparent hover:text-white"
         >
           Join Us
-        </a>
+        </Link>
         <button
           aria-label="Cart"
           className="flex items-center justify-center p-1 transition-transform hover:scale-105"
@@ -70,25 +69,25 @@ export default function Navbar() {
       {isOpen && (
         <div className="absolute top-full left-0 w-full bg-[#0338E3]/95 backdrop-blur-md p-6 flex flex-col gap-4 shadow-xl md:hidden border-t border-white/10">
           {links.map((l, i) => (
-            <a
-              key={l}
+            <Link
+              to={l}
               href="#"
               className={`text-base transition-colors ${i === 0 ? "font-semibold text-white" : "text-white/80 hover:text-white"
                 }`}
             >
               {l}
-            </a>
+            </Link>
           ))}
           <div className="pt-2 border-t border-white/10 flex flex-col gap-3">
-            <a
-              href="#"
+            <Link
+              to="#"
               className="text-white/80 hover:text-whit font-semibolde"
             >
               Join Us
-            </a>
-            <a href="#" className="text-white/80 hover:text-white font-semibold">
+            </Link>
+            <Link to="#" className="text-white/80 hover:text-white font-semibold">
               Sign In
-            </a>
+            </Link>
           </div>
         </div>
       )}

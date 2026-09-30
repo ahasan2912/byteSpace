@@ -1,6 +1,4 @@
 import Navbar from "./Navbar";
-
-// Assets imported from src/assets
 import heroGreenSpring from "../assets/hero-1.png";
 import springWhiteSm from "../assets/Frame (2).png";
 import cylinderGreen from "../assets/Cone.png";
@@ -11,7 +9,6 @@ import springWhiteLg from "../assets/spring-white-lg.png";
 import avatarsRow from "../assets/avatars/avatars_row.png";
 import happyMoment from "../assets/happy.png";
 
-// Inner shapes inside the container
 const innerShapes = [
   { src: springWhiteSm, left: "10%", top: "45%", width: "90px", height: "95px" },
   { src: torusWhite, left: "1%", top: "68%", width: "220px", height: "230px" },
@@ -57,27 +54,19 @@ export default function Hero() {
         className="absolute left-1/2 bottom-0 z-10 w-full max-w-275 h-70 sm:h-auto -translate-x-1/2 object-fill pointer-events-none opacity-90"
       />
 
-      {/* Navigation Bar */}
       <div className="w-full max-w-7xl mx-auto px-4 z-30">
         <Navbar />
       </div>
 
-      {/* Hero Content Area */}
       <div className="relative w-full max-w-6xl mx-auto flex flex-col items-center z-20 my-auto px-4 pt-6">
-        
-        {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl lg:text-[60px] font-bold leading-tight lg:leading-17 tracking-tight text-white text-center mb-4 max-w-4xl">
           Get Access to Hundreds
           <br className="hidden sm:block" />
           {" "}Courses Available
         </h1>
-
-        {/* Subtitle */}
         <p className="text-sm sm:text-base lg:text-[15px] font-normal leading-relaxed text-white/90 text-center max-w-4xl">
           Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.
         </p>
-
-        {/* Search Bar & Button */}
         <div className="w-full max-w-md md:max-w-xl flex flex-col sm:flex-row items-center justify-center gap-3 mt-16">
           <div className="flex h-12 sm:h-13 w-full items-center gap-3 rounded-full bg-white px-5 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
             <svg
@@ -105,7 +94,6 @@ export default function Hero() {
           </button>
         </div>
 
-        {/* 3D Shapes (Visible on large screens) */}
         {innerShapes.map(({ src, left, right, top, width, height }, idx) => (
           <img
             key={idx}
@@ -117,10 +105,8 @@ export default function Hero() {
           />
         ))}
 
-        {/* Student Section & Floating Badges Container */}
         <div className="relative w-full max-w-125 md:max-w-162.5 lg:max-w-195 mx-auto flex justify-center md:items-end min-h-105 z-20">
           
-          {/* Main Student Image */}
           <img
             src={happyMoment}
             alt="Smiling student with headset and laptop"

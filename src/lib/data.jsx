@@ -3,38 +3,52 @@ import logo2 from '../assets/svg/logo-2.svg';
 import logo3 from '../assets/svg/logo-3.svg';
 import logo4 from '../assets/svg/logo-4.svg';
 import logo5 from '../assets/svg/logo-5.svg';
+import client1 from '../assets/client_1.png';
+import client2 from '../assets/client_2.png';
+import client3 from '../assets/client_3.png';
+import learningIcon1 from '../assets/svg/path_1.svg';
+import learningIcon2 from '../assets/svg/path_2.svg';
+import learningIcon3 from '../assets/svg/path_3.svg';
+import learningIcon4 from '../assets/svg/path_4.svg';
+import learningIcon5 from '../assets/svg/path_5.svg';
+import learningIcon6 from '../assets/svg/path_6.svg';
+import skillIcon1 from '../assets/skill_1.avif';
+import skillIcon2 from '../assets/skill_2.avif';
+import skillIcon3 from '../assets/skill_3.avif';
+import skillIcon4 from '../assets/skill_4.avif';
+import skillIcon5 from '../assets/skill_5.avif';
+import skillIcon6 from '../assets/skill_6.png';
 
-export const Logos = [
-    // 1. Globe / Waves Circle
-    {
-        id: 1,
-        name: 'Logoipsum',
-        icon: logo1,
-    },
-    // 2. Sunburst / Radiant Circle
-    {
-        id: 2,
-        name: 'Logoipsum',
-        icon: logo2,
-    },
-    // 3. Lightning Bolt Circle
-    {
-        id: 3,
-        name: 'Logoipsum',
-        icon: logo3,
-    },
-    // 4. Four Petal / Clover Flower Circle
-    {
-        id: 4,
-        name: 'Logoipsum',
-        icon: logo4,
-    },
-    // 5. Concentric Circles / Spiral Target
-    {
-        id: 5,
-        name: 'Logoipsum',
-        icon: logo5,
-    },
+export const logos = [
+  {
+    id: 1,
+    name: 'Logoipsum',
+    icon: logo1,
+  },
+  // 2. Sunburst / Radiant Circle
+  {
+    id: 2,
+    name: 'Logoipsum',
+    icon: logo2,
+  },
+  // 3. Lightning Bolt Circle
+  {
+    id: 3,
+    name: 'Logoipsum',
+    icon: logo3,
+  },
+  // 4. Four Petal / Clover Flower Circle
+  {
+    id: 4,
+    name: 'Logoipsum',
+    icon: logo4,
+  },
+  // 5. Concentric Circles / Spiral Target
+  {
+    id: 5,
+    name: 'Logoipsum',
+    icon: logo5,
+  },
 ];
 
 export const customStyles = `
@@ -58,28 +72,28 @@ export const customStyles = `
 }
 `;
 
-export const CATEGORIES = [
-    'Featured',
-    'Music',
-    'Drawing & Painting',
-    'Marketing',
-    'Animation',
-    'Social Media',
-    'UI/UX Design',
-    'Creative Marketing',
-    'Digital Illustration',
-    'Film & Video',
-    'Crafts',
-    'Freelance & Entrepreneurship',
-    'Graphic Design',
-    'Photography',
-    'Productivity',
-    'Web Development',
-    'Data Science',
-    'Cooking',
+export const categories = [
+  'Featured',
+  'Music',
+  'Drawing & Painting',
+  'Marketing',
+  'Animation',
+  'Social Media',
+  'UI/UX Design',
+  'Creative Marketing',
+  'Digital Illustration',
+  'Film & Video',
+  'Crafts',
+  'Freelance & Entrepreneurship',
+  'Graphic Design',
+  'Photography',
+  'Productivity',
+  'Web Development',
+  'Data Science',
+  'Cooking',
 ];
 
-export const ALL_COURSES = [
+export const allCourses = [
   {
     id: 1,
     title: 'Learn Figma from Basic',
@@ -92,7 +106,7 @@ export const ALL_COURSES = [
     price: 25,
     category: 'UI/UX Design',
     isFeatured: true,
-    image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=800&q=80',
+    image: skillIcon1,
     avatars: [
       'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
@@ -112,7 +126,7 @@ export const ALL_COURSES = [
     price: 25,
     category: 'Graphic Design',
     isFeatured: true,
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
+    image: skillIcon2,
     avatars: [
       'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80',
@@ -122,7 +136,7 @@ export const ALL_COURSES = [
   },
   {
     id: 3,
-    title: 'the Power of Big Data',
+    title: 'The Power of Big Data',
     author: 'purepearl studio',
     rating: 4.5,
     lessons: '17 Lessons',
@@ -132,7 +146,7 @@ export const ALL_COURSES = [
     price: 25,
     category: 'Data Science',
     isFeatured: true,
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    image: skillIcon3,
     avatars: [
       'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=80',
@@ -152,7 +166,7 @@ export const ALL_COURSES = [
     price: 25,
     category: 'Productivity',
     isFeatured: true,
-    image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=800&q=80',
+    image: skillIcon4,
     avatars: [
       'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
@@ -172,7 +186,7 @@ export const ALL_COURSES = [
     price: 25,
     category: 'Freelance & Entrepreneurship',
     isFeatured: true,
-    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80',
+    image: skillIcon5,
     avatars: [
       'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80',
@@ -192,7 +206,7 @@ export const ALL_COURSES = [
     price: 25,
     category: 'Freelance & Entrepreneurship',
     isFeatured: true,
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+    image: skillIcon6,
     avatars: [
       'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=80',
@@ -201,3 +215,63 @@ export const ALL_COURSES = [
     ],
   },
 ];
+
+export const testimonials = [
+  {
+    id: 1,
+    name: 'Sarah M.',
+    role: 'Enthusiastic Learner',
+    avatar: client1,
+    avatarBg: 'bg-[#EAB308]', // Vibrant yellow background for Sarah
+    quote: '"ByteSpace has transformed my approach to learning. The diverse range of courses and the quality of content provided by creators have exceeded my expectations. The platform truly fosters a sense of community and lifelong learning."'
+  },
+  {
+    id: 2,
+    name: 'James L.',
+    role: 'Lifelong Learner',
+    avatar: client2,
+    avatarBg: 'bg-slate-300',
+    quote: '"I\'ve tried several online learning platforms, and ByteSpace stands out for its vibrant community and the variety of courses available. The easy navigation and engaging content make it a go-to platform for continuous skill development."'
+  },
+  {
+    id: 3,
+    name: 'Alex B.',
+    role: 'Inspired Creator',
+    avatar: client3,
+    avatarBg: 'bg-slate-200',
+    quote: '"As a creator, ByteSpace has been a game-changer for me. The Course Editor is user-friendly, and the support from the community is incredible. It\'s fulfilling to see my courses making a positive impact on learners globally."'
+  }
+];
+
+export const learningCategories = [
+  {
+    id: 1,
+    title: 'Design',
+    icon: learningIcon1,
+  },
+  {
+    id: 2,
+    title: 'Development',
+    icon: learningIcon2,
+  },
+  {
+    id: 3,
+    title: 'IT & Software',
+    icon: learningIcon3,
+  },
+  {
+    id: 4,
+    title: 'Business',
+    icon: learningIcon4,
+  },
+  {
+    id: 5,
+    title: 'Marketing',
+    icon: learningIcon5,
+  },
+  {
+    id: 6,
+    title: 'Photography',
+    icon: learningIcon6,
+  },
+]; 
