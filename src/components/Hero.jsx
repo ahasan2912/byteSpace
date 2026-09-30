@@ -106,7 +106,7 @@ export default function Hero() {
         ))}
 
         <div className="relative w-full max-w-125 md:max-w-162.5 lg:max-w-195 mx-auto flex justify-center md:items-end min-h-105 z-20">
-          
+
           <img
             src={happyMoment}
             alt="Smiling student with headset and laptop"
@@ -129,10 +129,10 @@ export default function Hero() {
             <p className="text-[10px] sm:text-[11px] font-medium text-[#333]">
               Learning Progress
             </p>
-            <p className="mt-[2px] text-2xl sm:text-[32px] md:text-[38px] font-bold leading-none tracking-tight text-[#111]">
+            <p className="mt-0.5 text-2xl sm:text-[32px] md:text-[38px] font-bold leading-none tracking-tight text-[#111]">
               55%
             </p>
-            <div className="mt-2 h-[5px] w-full rounded-full bg-[#EBEBEB]">
+            <div className="mt-2 h-1.25 w-full rounded-full bg-[#EBEBEB]">
               <div className="h-full w-[55%] rounded-full bg-[#CCFF00]" />
             </div>
           </div>
@@ -142,7 +142,7 @@ export default function Hero() {
             <p className="text-[11px] sm:text-[13px] font-semibold leading-tight text-[#111]">
               Happy Students
             </p>
-            <div className="mt-[2px] flex items-center gap-1">
+            <div className="mt-0.5 flex items-center gap-1">
               <span className="text-[10px] sm:text-[11px] font-semibold text-[#444]">4.5</span>
               <span className="text-[9px] sm:text-[10px] font-normal text-[#8A8A8A]">(240)</span>
               <svg
@@ -155,15 +155,14 @@ export default function Hero() {
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
               </svg>
             </div>
-            <div className="mt-[6px]">
+            <div className="mt-1.5">
               <img
                 src={avatarsRow}
                 alt="Student Avatars"
-                className="h-5 sm:h-[28px] w-auto object-contain"
+                className="h-5 sm:h-7 md:h-8 w-auto object-contain"
               />
             </div>
           </div>
-
         </div>
       </div>
     </section>
