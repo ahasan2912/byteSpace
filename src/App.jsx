@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
-import BuildSkills from "./components/BuildSkills";
-import Hero from "./components/Hero";
-import LogoSlider from "./components/LogoSlider";
-import LearningPathSection from "./components/LearningPathSection";
-import Testimonials from "./components/Testimonials";
-import Footer from "./components/Footer";
-import PotentialCreators from "./components/PotentialCreators";
-import ProfessionalGrowth from "./components/ProfessionalGrowth";
+import { Route, Routes } from "react-router";
+import Home from "./pages/Home";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -28,16 +24,11 @@ const App = () => {
   }
 
   return (
-    <div>
-      <Hero />
-      <LogoSlider />
-      <BuildSkills />
-      <LearningPathSection />
-      <ProfessionalGrowth />
-      <PotentialCreators />
-      <Testimonials />
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/signup" element={<SignUp />} />
+    </Routes>
   );
 };
 

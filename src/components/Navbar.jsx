@@ -33,11 +33,11 @@ export default function Navbar() {
 
       {/* Right: Actions */}
       <div className="flex items-center gap-4 md:gap-6 text-[14px] md:text-[15px] font-normal">
-        <Link to="#" className="hidden sm:inline-block text-white/85 transition-colors hover:text-white">
+        <Link to="/signin" className="hidden sm:inline-block text-white/85 transition-colors hover:text-white">
           Sign In
         </Link>
         <Link
-          to="#"
+          to="/signup"
           className="hidden sm:inline-block rounded-full bg-white/10 px-4 py-2 sm:bg-transparent sm:p-0 text-white transition-colors hover:bg-white/20 sm:hover:bg-transparent hover:text-white"
         >
           Join Us
@@ -80,12 +80,12 @@ export default function Navbar() {
           ))}
           <div className="pt-2 border-t border-white/10 flex flex-col gap-3">
             <Link
-              to="#"
+              to="/signin"
               className="text-white/80 hover:text-whit font-semibolde"
             >
               Join Us
             </Link>
-            <Link to="#" className="text-white/80 hover:text-white font-semibold">
+            <Link to="/signup" className="text-white/80 hover:text-white font-semibold">
               Sign In
             </Link>
           </div>

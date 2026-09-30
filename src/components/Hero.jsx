@@ -54,7 +54,7 @@ export default function Hero() {
         className="absolute left-1/2 bottom-0 z-10 w-full max-w-275 h-70 sm:h-auto -translate-x-1/2 object-fill pointer-events-none opacity-90"
       />
 
-      <div className="w-full max-w-7xl mx-auto px-4 z-30">
+      <div className="w-full max-w-7xl mx-auto z-30">
         <Navbar />
       </div>
 
