@@ -5,6 +5,7 @@ import LogoSlider from "./components/LogoSlider";
 import LearningPathSection from "./components/LearningPathSection";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
+import PotentialCreators from "./components/PotentialCreators";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -31,6 +32,7 @@ const App = () => {
       <LogoSlider />
       <BuildSkills />
       <LearningPathSection />
+      <PotentialCreators/>
       <Testimonials />
       <Footer/>
     </div>

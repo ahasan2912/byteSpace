@@ -51,31 +51,31 @@ export default function Footer() {
           <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-3 gap-8 pt-2 lg:mt-14.5">
             <div className="space-y-4">
               <ul className="space-y-3.5 text-sm text-slate-700 font-normal">
-                <li><a href="#" className="hover:text-slate-950 transition-colors">Featured Courses</a></li>
-                <li><a href="#" className="hover:text-slate-950 transition-colors">Featured Categories</a></li>
-                <li><a href="#" className="hover:text-slate-950 transition-colors">Business</a></li>
-                <li><a href="#" className="hover:text-slate-950 transition-colors">IT</a></li>
-                <li><a href="#" className="hover:text-slate-950 transition-colors">Design</a></li>
+                <li><Link to="#" className="hover:text-slate-950 transition-colors">Featured Courses</Link></li>
+                <li><Link to="#" className="hover:text-slate-950 transition-colors">Featured Categories</Link></li>
+                <li><Link to="#" className="hover:text-slate-950 transition-colors">Business</Link></li>
+                <li><Link to="#" className="hover:text-slate-950 transition-colors">IT</Link></li>
+                <li><Link to="#" className="hover:text-slate-950 transition-colors">Design</Link></li>
               </ul>
             </div>
 
             <div className="space-y-4">
               <ul className="space-y-3.5 text-sm text-slate-700 font-normal">
-                <li><a href="#" className="hover:text-slate-950 transition-colors">Development</a></li>
-                <li><a href="#" className="hover:text-slate-950 transition-colors">Marketing</a></li>
-                <li><a href="#" className="hover:text-slate-950 transition-colors">Photography</a></li>
-                <li><a href="#" className="hover:text-slate-950 transition-colors">Finance</a></li>
-                <li><a href="#" className="hover:text-slate-950 transition-colors">Sport</a></li>
+                <li><Link to="#" className="hover:text-slate-950 transition-colors">Development</Link></li>
+                <li><Link to="#" className="hover:text-slate-950 transition-colors">Marketing</Link></li>
+                <li><Link to="#" className="hover:text-slate-950 transition-colors">Photography</Link></li>
+                <li><Link to="#" className="hover:text-slate-950 transition-colors">Finance</Link></li>
+                <li><Link to="#" className="hover:text-slate-950 transition-colors">Sport</Link></li>
               </ul>
             </div>
 
             <div className="space-y-4">
               <ul className="space-y-3.5 text-sm text-slate-700 font-normal">
-                <li><a href="#" className="hover:text-slate-950 transition-colors">Become a Creator</a></li>
-                <li><a href="#" className="hover:text-slate-950 transition-colors">Affiliate Program</a></li>
-                <li><a href="#" className="hover:text-slate-950 transition-colors">Contact</a></li>
-                <li><a href="#" className="hover:text-slate-950 transition-colors">Help</a></li>
-                <li><a href="#" className="hover:text-slate-950 transition-colors">About</a></li>
+                <li><Link to="#" className="hover:text-slate-950 transition-colors">Become a Creator</Link></li>
+                <li><Link to="#" className="hover:text-slate-950 transition-colors">Affiliate Program</Link></li>
+                <li><Link to="#" className="hover:text-slate-950 transition-colors">Contact</Link></li>
+                <li><Link to="#" className="hover:text-slate-950 transition-colors">Help</Link></li>
+                <li><Link to="#" className="hover:text-slate-950 transition-colors">About</Link></li>
               </ul>
             </div>
           </div>
