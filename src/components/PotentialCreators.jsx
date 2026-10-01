@@ -8,7 +8,7 @@ import potentialCreator7 from "../assets/potentialCreator_7.png";
 
 const PotentialCreators = () => {
   return (
-    <section className="relative w-full min-h-[50vh] bg-[#0338E3] poppins-font flex flex-col justify-between items-center select-text overflow-hidden pt-10 sm:pt-6 pb-10 sm:pb-0 px-4">
+    <section className="relative w-full min-h-[50vh] bg-[#0338E3] poppins-font flex flex-col justify-between items-center select-text overflow-hidden py-12 px-4">
       {/* Background blueprint grid */}
       <div
         className="absolute inset-0 w-full h-full pointer-events-none"
