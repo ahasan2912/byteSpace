@@ -149,7 +149,7 @@ const SignIn = () => {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="bg-[#d2fb00] hover:bg-[#c5ec00] active:scale-95 text-[#1a1a1a] font-semibold text-base px-8 py-3 rounded-full shadow-sm hover:shadow transition-all duration-150 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+                                    className="bg-[#d2fb00] hover:bg-[#c5ec00] active:scale-95 text-[#1a1a1a] font-medium text-base px-6 sm:px-8 py-2 sm:py-3 rounded-full shadow-sm hover:shadow transition-all duration-150 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                                 >
                                     {isSubmitting ? (
                                         <span className="flex items-center gap-2">
