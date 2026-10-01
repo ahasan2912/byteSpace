@@ -14,7 +14,7 @@ const BuildSkills = () => {
         return course.category === selectedCategory;
     });
     return (
-        <div className="min-h-screen bg-white py-10 sm:py-18 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-auto bg-white py-10 sm:py-18 px-4 sm:px-6 lg:px-8">
             <div className="max-w-300 mx-auto space-y-12">
                 <header className="text-center max-w-235 mx-auto space-y-4">
                     <h1 className="text-3xl sm:text-4xl md:text-[44px] font-semibold text-[#000000] tracking-tight leading-[1.15]">
